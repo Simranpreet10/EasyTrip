@@ -5,11 +5,13 @@
         <group>
             <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/ForgotPassword.java</file>
             <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Splash.java</file>
-            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Signup.java</file>
-            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Login.java</file>
             <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Conn.java</file>
             <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Loading.java</file>
             <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Dashboard.java</file>
+            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/Login.java</file>
+            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/AddCustomer.java</file>
+            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/ViewCustomer.java</file>
+            <file>file:/C:/Users/Sumit%20Thakur/OneDrive/Desktop/Travel_Management_System/src/travel/management/system/updateCustomer.java</file>
         </group>
     </open-files>
 </project-private>
