@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Dashboard extends JFrame implements ActionListener{
     
     String username;
-    JButton addPersonalDetails, viewPersonalDetails;
+    JButton addPersonalDetails, viewPersonalDetails,updatePersonalDetails,checkpackages;
     Dashboard(String username) {
         this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -47,7 +47,7 @@ public class Dashboard extends JFrame implements ActionListener{
         addPersonalDetails.addActionListener(this);
         p2.add(addPersonalDetails);
         
-        JButton updatePersonalDetails = new JButton("update Personal Details");
+        updatePersonalDetails = new JButton("update Personal Details");
         updatePersonalDetails.setBounds(0, 50, 300, 50);
         updatePersonalDetails.setBackground(new Color(0, 0, 102));
         updatePersonalDetails.setForeground(Color.WHITE);
@@ -72,12 +72,13 @@ public class Dashboard extends JFrame implements ActionListener{
         deletePersonalDetails.setMargin(new Insets(0, 0, 0, 38));
         p2.add(deletePersonalDetails);
         
-        JButton checkpackages = new JButton("Check Packages");
+        checkpackages = new JButton("Check Packages");
         checkpackages.setBounds(0, 200, 300, 50);
         checkpackages.setBackground(new Color(0, 0, 102));
         checkpackages.setForeground(Color.WHITE);
         checkpackages.setFont(new Font("Tahoma", Font.PLAIN, 20));
         checkpackages.setMargin(new Insets(0, 0, 0, 100));
+        checkpackages.addActionListener(this);
         p2.add(checkpackages);
         
         JButton bookpackage = new JButton("Book Package");
@@ -182,6 +183,13 @@ public class Dashboard extends JFrame implements ActionListener{
         } else if (ae.getSource() == viewPersonalDetails) {
             new ViewCustomer(username);
         } 
+        else if(ae.getSource()==updatePersonalDetails){
+            new UpdateCustomer(username);
+        }
+        
+        else if(ae.getSource()==checkpackages){
+            new CheckPackage();
+        }
     }
     
     public static void main(String[] args){
