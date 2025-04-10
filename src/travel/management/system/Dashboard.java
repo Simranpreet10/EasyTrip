@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Dashboard extends JFrame implements ActionListener{
     
     String username;
-    JButton addPersonalDetails, viewPersonalDetails,updatePersonalDetails,checkpackages;
+    JButton addPersonalDetails, viewPersonalDetails,updatePersonalDetails,checkpackages,bookpackage,viewpackage,viewhotels,destinations,bookhotel;
     Dashboard(String username) {
         this.username = username;
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -81,36 +81,40 @@ public class Dashboard extends JFrame implements ActionListener{
         checkpackages.addActionListener(this);
         p2.add(checkpackages);
         
-        JButton bookpackage = new JButton("Book Package");
+        bookpackage = new JButton("Book Package");
         bookpackage.setBounds(0, 250, 300, 50);
         bookpackage.setBackground(new Color(0, 0, 102));
         bookpackage.setForeground(Color.WHITE);
         bookpackage.setFont(new Font("Tahoma", Font.PLAIN, 20));
         bookpackage.setMargin(new Insets(0, 0, 0, 110));
+        bookpackage.addActionListener(this);
         p2.add(bookpackage);
         
-        JButton viewpackage = new JButton("View Package");
+        viewpackage = new JButton("View Package");
         viewpackage.setBounds(0, 300, 300, 50);
         viewpackage.setBackground(new Color(0, 0, 102));
         viewpackage.setForeground(Color.WHITE);
         viewpackage.setFont(new Font("Tahoma", Font.PLAIN, 20));
         viewpackage.setMargin(new Insets(0, 0, 0, 110));
+        viewpackage.addActionListener(this);
         p2.add(viewpackage);
         
-        JButton viewhotels = new JButton("View Hotels");
+        viewhotels = new JButton("View Hotels");
         viewhotels.setBounds(0, 350, 300, 50);
         viewhotels.setBackground(new Color(0, 0, 102));
         viewhotels.setForeground(Color.WHITE);
         viewhotels.setFont(new Font("Tahoma", Font.PLAIN, 20));
         viewhotels.setMargin(new Insets(0, 0, 0, 120));
+        viewhotels.addActionListener(this);
         p2.add(viewhotels);
         
-        JButton bookhotel = new JButton("Book Hotels");
+        bookhotel = new JButton("Book Hotels");
         bookhotel.setBounds(0, 400, 300, 50);
         bookhotel.setBackground(new Color(0, 0, 102));
         bookhotel.setForeground(Color.WHITE);
         bookhotel.setFont(new Font("Tahoma", Font.PLAIN, 20));
         bookhotel.setMargin(new Insets(0, 0, 0, 120));
+        bookhotel.addActionListener(this);
         p2.add(bookhotel);
         
         JButton viewBookedhotel = new JButton("View Booked Hotels");
@@ -121,12 +125,13 @@ public class Dashboard extends JFrame implements ActionListener{
         viewBookedhotel.setMargin(new Insets(0, 0, 0, 50));
         p2.add(viewBookedhotel);
         
-        JButton destinations = new JButton("Destinations");
+        destinations = new JButton("Destinations");
         destinations.setBounds(0, 500, 300, 50);
         destinations.setBackground(new Color(0, 0, 102));
         destinations.setForeground(Color.WHITE);
         destinations.setFont(new Font("Tahoma", Font.PLAIN, 20));
         destinations.setMargin(new Insets(0, 0, 0, 110));
+        destinations.addActionListener(this);
         p2.add(destinations);
         
         JButton payments = new JButton("Payments");
@@ -188,9 +193,32 @@ public class Dashboard extends JFrame implements ActionListener{
         }
         
         else if(ae.getSource()==checkpackages){
-            new CheckPackage();
+            new CheckPackage().setVisible(true);
         }
+        else if(ae.getSource() == bookpackage) {
+            new BookPackage(username).setVisible(true); 
+        }
+        
+        else if(ae.getSource()==viewpackage){
+            new ViewPackage(username).setVisible(true);
+        }
+        
+        else if(ae.getSource()==viewhotels){
+            new CheckHotels().setVisible(true);
+        }
+        
+        
+        else if(ae.getSource()==destinations){
+            new CheckHotels().setVisible(true);
+        }
+        
+        else if(ae.getSource()==bookhotel){
+            new BookHotel(username).setVisible(true);
+        }
+        
+        
     }
+    
     
     public static void main(String[] args){
         new Dashboard("");
